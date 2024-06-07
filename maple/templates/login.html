@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .full-height {
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="container d-flex justify-content-center align-items-center full-height">
+        <!-- Login form -->
+        <form class="col-6 card p-3 shadow-lg" method="post" enctype="multipart/form-data">
+ 
+            {% csrf_token %}  <!-- CSRF token for security -->
+ 
+            <!-- Login heading -->
+            <h3>Login</h3>
+            <hr>
+ 
+            <!-- Display error/success messages -->
+            {% if messages %}
+            <div class="alert alert-primary" role="alert">
+                {% for message in messages %}
+                {{ message }}
+                {% endfor %}
+            </div>
+            {% endif %}
+ 
+            <!-- Username input field -->
+            <div class="form-group">
+                <label for="exampleInputEmail1">Username</label>
+                <input type="text" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    placeholder="Enter username" required>
+            </div>
+ 
+            <!-- Password input field -->
+            <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+            </div>
+ 
+            <!-- Link to registration page -->
+            <p>Don't have an account <a href="/register/">Register</a> </p>
+ 
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

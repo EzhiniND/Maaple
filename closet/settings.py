@@ -88,12 +88,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'maple',
-        'USER': 'root',
+        'USER': 'Ezhini',
+        'PASSWORD': 'Ezhini@2799',
         'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
         'PORT': '3306',
-
     }
 }
+
 
 
 # Password validation
